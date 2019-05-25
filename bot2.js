@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
@@ -228,4 +227,4 @@ if (message.content.startsWith(adminprefix + 'setT')) {
  
 });
 
-client.login('NTgxMTMyMDAwMDc3ODA3NjM2.XOazbw.wUeyCMbaEbNWu7jdjXeqmEcpmEI')
+client.login(process.env.BOT_TOKEN);
