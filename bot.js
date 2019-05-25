@@ -4424,4 +4424,4 @@ const Za7f = [
     }
 });
 
-client.login('NTgxMTMyMDAwMDc3ODA3NjM2.XOazbw.wUeyCMbaEbNWu7jdjXeqmEcpmEI')
+client.login(process.env.BOT_TOKEN);
