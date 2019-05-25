@@ -992,6 +992,23 @@ message.react("``انا لا امتلك رتبه لاسحب الاعضاء``")
 });
 
 client.on('message', message => {
+const prefix   = "=";
+ if (message.content.toLowerCase() === prefix + "move all") {
+     message.delete(4000)
+ if(!message.channel.guild) return;
+ if (!message.member.hasPermission("MOVE_MEMBERS")) return;
+ if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return;
+if (message.member.voiceChannel == null) return;
+ var author = message.member.voiceChannelID;
+ var m = message.guild.members.filter(m=>m.voiceChannel)
+ message.guild.members.filter(m=>m.voiceChannel).forEach(m => {
+ m.setVoiceChannel(author)
+ })
+ message.channel.send('\`Moved All Voice Members To Your Channel\`').then(m => m.delete(4000))
+ }
+   });
+
+client.on('message', message => {
   var prefix = "="
   if (message.author.codes) return;
   if (!message.content.startsWith(prefix)) return;
